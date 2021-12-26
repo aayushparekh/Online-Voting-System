@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Student Profile Management</title>
+<link href="manageprofile_files/user_styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="manageprofile_files/user.js">
+</script>
+</head>
+<body bgcolor="tan">
+     
+<center><b><font size="6" color="brown">Voting System</font></b></center><br><br>
+<div id="page">
+<div id="header">
+  <h1>MANAGE MY PROFILE</h1>
+  <a href="student.html">Home</a> | <a href="vote.html">Current Polls</a> | <a href="manage-profile.html">Manage My Profile</a> | <a href="changepass.html">Change Password</a>| <a href="logout.html">Logout</a>
+</div>
+<div id="container">
+<table width="620" border="0" align="center">
+<caption><h3>UPDATE PROFILE</h3></caption>
+<form action="manage-profile.php?id=&lt;?php echo $_SESSION['member_id']; ?&gt;" method="post" onsubmit="return updateProfile(this)"></form>
+</table><table align="center">
+<tbody><tr><td>First Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="firstname" maxlength="15" value="&lt;?php echo $firstName; ?&gt;"></td></tr>
+<tr><td>Last Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="lastname" maxlength="15" value="&lt;?php echo $lastName; ?&gt;"></td></tr>
+<tr><td>Email Address:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="email" maxlength="100" value="&lt;?php echo $email; ?&gt;"></td></tr>
+<tr><td>&nbsp;</td><td><input type="submit" name="update" value="Update Profile"></td></tr>
+</tbody></table>
+
+<hr>
+</div>
+<div id="footer"> 
+<div class="bottom_addr">NodeJS Voting System. Made By Harshil & Aayush</div>
+</div>
+</div>
+
+</body></html>

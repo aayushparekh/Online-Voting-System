@@ -1,0 +1,58 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href="registeracc_files/user_styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="registeracc_files/user.js">
+</script>
+</head><body bgcolor="tan">
+   
+<center><b><font size="6" color="brown">Voting System</font></b></center><br><br>
+<div id="page">
+<div id="header">
+<h1>Member Registration </h1>
+<div class="news"><marquee behavior="alternate">Login with your credentials provided to vote for your favourate candidates. </marquee></div>
+</div>
+
+<div id="container">
+
+<center><h3>Register an account by filling in the needed information below:</h3></center><br><br>";
+<form action="registeracc.html" method="post" onsubmit="return registerValidate(this)">';
+<table align="center"><tbody><tr><td>';
+echo "</td></tr><tr><td>First Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="firstname" maxlength="15"></td></tr><tr><td>Last Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="lastname" maxlength="15"></td></tr><tr><td>Email Address:</td><td><input type="email" style="background-color:#999999; font-weight:bold;" name="email" maxlength="100" id="email"></td><td><span id="result" style="color:red;"></span></td></tr><tr><td>Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="password" maxlength="15" value=""></td></tr><tr><td>Confirm Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr><tr><td>&nbsp;</td><td><input type="submit" name="submit" value="Register Account"></td></tr><tr><td colspan="2"><p>Already have an account? <a href="file:///C:/Aayush%20assignments/cmpt%20353/Online%20Voting%20System-1569145742/online_voting/online_voting_nodejs/candidate/index.php"><b>Login Here</b></a></p></td></tr></tbody></table>";
+echo "</form>";
+?&gt;
+</div> 
+
+
+
+<div id="footer">
+<div class="bottom_addr"></div>
+</div>
+</div>
+
+<script src="registeracc_files/jquery-1.js"></script>
+    <script>
+    $(document).ready(function(){
+      
+        $('#email').blur(function(event){
+         
+            event.preventDefault();
+            var emailId=$('#email').val();
+                                $.ajax({                     
+                            url:'checkuser.html',
+                            method:'post',
+                            data:{email:emailId},  
+                            dataType:'html',
+                            success:function(message)
+                            {
+                            $('#result').html(message);
+                            }
+                      });
+                    
+           
+
+        });
+
+    });
+   
+    </script>
+</body></html>

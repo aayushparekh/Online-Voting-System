@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"></head><body bgcolor="tan">alert('Password Change')";
+  }
+  else
+  {
+    echo "<script>alert('New Password and Confirm Password Do Not Match')</script>";
+  }
+
+}
+else
+{
+    echo "<script>alert('Old password do not match')</script>";
+}
+
+
+// redirect back to profile
+}
+?&gt;
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Profile Management</title>
+<link href="changepass_files/user_styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="changepass_files/user.js">
+</script>
+
+
+     
+<center><b><font size="6" color="brown">Voting System</font></b></center><br><br>
+<div id="page">
+<div id="header">
+  <h1>MANAGE MY PROFILE</h1>
+  <a href="student.html">Home</a> | <a href="vote.html">Current Polls</a> | <a href="manage-profile.html">Manage My Profile</a> | <a href="changepass.html">Change Password</a>| <a href="logout.html">Logout</a>
+</div>
+<div id="container">
+<table width="620" border="0" align="center">
+<caption><h3>CHANGE PASSWORD</h3></caption>
+<form action="changepass.php?id=&lt;?php echo $_SESSION['member_id']; ?&gt;" method="post"></form>
+</table><table align="center">
+<tbody><tr><td>Old Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="oldpass" maxlength="5" value=""></td></tr>
+<tr><td>New Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="newpass" maxlength="5" value=""></td></tr>
+<tr><td>Confirm New Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="conpass" maxlength="15" value=""></td></tr>
+<tr><td>&nbsp;</td><td><input type="submit" name="changepass" value="Update Profile"></td></tr>
+</tbody></table>
+
+<hr>
+</div>
+<div id="footer"> 
+<div class="bottom_addr"> 2021 Simple NodeJS Voting System. Made By Harshil & Aayush</div></div>
+</div>
+
+</body></html>
